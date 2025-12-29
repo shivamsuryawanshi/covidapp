@@ -1,0 +1,158 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > DayWiseController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">covidapp.covid.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: DayWiseController (covidapp.covid.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DayWiseController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    14.3%
+  </span>
+  <span class="absValue">
+    (1/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    25%
+  </span>
+  <span class="absValue">
+    (2/8)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package covidapp.covid.controller;
+&nbsp;
+&nbsp;import covidapp.covid.entity.DayWise;
+&nbsp;import covidapp.covid.service.DayWiseService;
+&nbsp;import org.springframework.format.annotation.DateTimeFormat;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.time.LocalDate;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/api/daywise&quot;)
+&nbsp;@CrossOrigin(&quot;*&quot;)
+&nbsp;public class DayWiseController {
+&nbsp;
+&nbsp;    private final DayWiseService service;
+&nbsp;
+<b class="fc">&nbsp;    public DayWiseController(DayWiseService service) {</b>
+<b class="fc">&nbsp;        this.service = service;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping
+&nbsp;    public List&lt;DayWise&gt; getAll() {
+<b class="nc">&nbsp;        return service.getAll();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/{id}&quot;)
+&nbsp;    public DayWise getById(@PathVariable Long id) {
+<b class="nc">&nbsp;        return service.getById(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/by-date&quot;)
+&nbsp;    public DayWise getByDate(
+&nbsp;            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+&nbsp;            LocalDate date
+&nbsp;    ) {
+<b class="nc">&nbsp;        return service.getByDate(date);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PostMapping
+&nbsp;    public DayWise create(@RequestBody DayWise dayWise) {
+<b class="nc">&nbsp;        return service.create(dayWise);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PutMapping(&quot;/{id}&quot;)
+&nbsp;    public DayWise update(@PathVariable Long id, @RequestBody DayWise dayWise) {
+<b class="nc">&nbsp;        return service.update(id, dayWise);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @DeleteMapping(&quot;/{id}&quot;)
+&nbsp;    public void delete(@PathVariable Long id) {
+<b class="nc">&nbsp;        service.delete(id);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-09 16:04</div>
+</div>
+</body>
+</html>

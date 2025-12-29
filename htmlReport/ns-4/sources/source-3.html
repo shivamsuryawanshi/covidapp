@@ -1,0 +1,163 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > DayWiseService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">covidapp.covid.service</a>
+</div>
+
+<h1>Coverage Summary for Class: DayWiseService (covidapp.covid.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DayWiseService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    14.3%
+  </span>
+  <span class="absValue">
+    (1/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    8.7%
+  </span>
+  <span class="absValue">
+    (2/23)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package covidapp.covid.service;
+&nbsp;
+&nbsp;import covidapp.covid.entity.DayWise;
+&nbsp;import covidapp.covid.repository.DayWiseRepository;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.time.LocalDate;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Service
+&nbsp;public class DayWiseService {
+&nbsp;
+&nbsp;    private final DayWiseRepository repository;
+&nbsp;
+<b class="fc">&nbsp;    public DayWiseService(DayWiseRepository repository) {</b>
+<b class="fc">&nbsp;        this.repository = repository;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;DayWise&gt; getAll() {
+<b class="nc">&nbsp;        return repository.findAll();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public DayWise getById(Long id) {
+<b class="nc">&nbsp;        return repository.findById(id)</b>
+<b class="nc">&nbsp;                .orElseThrow(() -&gt; new RuntimeException(&quot;Record not found&quot;));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public DayWise getByDate(LocalDate date) {
+<b class="nc">&nbsp;        return repository.findByDate(date).orElse(null);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public DayWise create(DayWise dayWise) {
+<b class="nc">&nbsp;        dayWise.setId(null); // Auto-generate ID</b>
+<b class="nc">&nbsp;        return repository.save(dayWise);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public DayWise update(Long id, DayWise dayWise) {
+<b class="nc">&nbsp;        DayWise existing = getById(id);</b>
+&nbsp;
+<b class="nc">&nbsp;        existing.setDate(dayWise.getDate());</b>
+<b class="nc">&nbsp;        existing.setConfirmed(dayWise.getConfirmed());</b>
+<b class="nc">&nbsp;        existing.setDeaths(dayWise.getDeaths());</b>
+<b class="nc">&nbsp;        existing.setRecovered(dayWise.getRecovered());</b>
+<b class="nc">&nbsp;        existing.setActive(dayWise.getActive());</b>
+<b class="nc">&nbsp;        existing.setNewCases(dayWise.getNewCases());</b>
+<b class="nc">&nbsp;        existing.setNewDeaths(dayWise.getNewDeaths());</b>
+<b class="nc">&nbsp;        existing.setNewRecovered(dayWise.getNewRecovered());</b>
+<b class="nc">&nbsp;        existing.setDeathsPer100Cases(dayWise.getDeathsPer100Cases());</b>
+<b class="nc">&nbsp;        existing.setRecoveredPer100Cases(dayWise.getRecoveredPer100Cases());</b>
+<b class="nc">&nbsp;        existing.setDeathsPer100Recovered(dayWise.getDeathsPer100Recovered());</b>
+<b class="nc">&nbsp;        existing.setNumberOfCountries(dayWise.getNumberOfCountries());</b>
+&nbsp;
+<b class="nc">&nbsp;        return repository.save(existing);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void delete(Long id) {
+<b class="nc">&nbsp;        repository.deleteById(id);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-09 16:04</div>
+</div>
+</body>
+</html>

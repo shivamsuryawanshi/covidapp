@@ -1,0 +1,210 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > DayWise</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">covidapp.covid.entity</a>
+</div>
+
+<h1>Coverage Summary for Class: DayWise (covidapp.covid.entity)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DayWise</td>
+<td class="coverageStat">
+  <span class="percent">
+    3.7%
+  </span>
+  <span class="absValue">
+    (1/27)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    3.7%
+  </span>
+  <span class="absValue">
+    (1/27)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">DayWise$HibernateInstantiator</td>
+  </tr>
+  <tr>
+    <td class="name">DayWise$HibernateProxy</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    3.7%
+  </span>
+  <span class="absValue">
+    (1/27)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    3.7%
+  </span>
+  <span class="absValue">
+    (1/27)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package covidapp.covid.entity;
+&nbsp;
+&nbsp;import jakarta.persistence.*;
+&nbsp;import java.time.LocalDate;
+&nbsp;
+&nbsp;@Entity
+&nbsp;@Table(name = &quot;day_wise&quot;)
+&nbsp;public class DayWise {
+&nbsp;
+&nbsp;    @Id
+&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
+&nbsp;    private Long id;
+&nbsp;
+&nbsp;    @Column(name = &quot;Date&quot;)
+&nbsp;    private LocalDate date;
+&nbsp;
+&nbsp;    @Column(name = &quot;Confirmed&quot;)
+&nbsp;    private Integer confirmed;
+&nbsp;
+&nbsp;    @Column(name = &quot;Deaths&quot;)
+&nbsp;    private Integer deaths;
+&nbsp;
+&nbsp;    @Column(name = &quot;Recovered&quot;)
+&nbsp;    private Integer recovered;
+&nbsp;
+&nbsp;    @Column(name = &quot;Active&quot;)
+&nbsp;    private Integer active;
+&nbsp;
+&nbsp;    @Column(name = &quot;New cases&quot;)
+&nbsp;    private Integer newCases;
+&nbsp;
+&nbsp;    @Column(name = &quot;New deaths&quot;)
+&nbsp;    private Integer newDeaths;
+&nbsp;
+&nbsp;    @Column(name = &quot;New recovered&quot;)
+&nbsp;    private Integer newRecovered;
+&nbsp;
+&nbsp;    @Column(name = &quot;Deaths / 100 Cases&quot;)
+&nbsp;    private Double deathsPer100Cases;
+&nbsp;
+&nbsp;    @Column(name = &quot;Recovered / 100 Cases&quot;)
+&nbsp;    private Double recoveredPer100Cases;
+&nbsp;
+&nbsp;    @Column(name = &quot;Deaths / 100 Recovered&quot;)
+&nbsp;    private Double deathsPer100Recovered;
+&nbsp;
+&nbsp;    @Column(name = &quot;no_of_countries&quot;)
+&nbsp;    private Integer numberOfCountries;
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;    public DayWise() {}</b>
+&nbsp;
+&nbsp;    // Getters and Setters
+&nbsp;
+<b class="nc">&nbsp;    public Long getId() { return id; }</b>
+<b class="nc">&nbsp;    public void setId(Long id) { this.id = id; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public LocalDate getDate() { return date; }</b>
+<b class="nc">&nbsp;    public void setDate(LocalDate date) { this.date = date; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Integer getConfirmed() { return confirmed; }</b>
+<b class="nc">&nbsp;    public void setConfirmed(Integer confirmed) { this.confirmed = confirmed; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Integer getDeaths() { return deaths; }</b>
+<b class="nc">&nbsp;    public void setDeaths(Integer deaths) { this.deaths = deaths; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Integer getRecovered() { return recovered; }</b>
+<b class="nc">&nbsp;    public void setRecovered(Integer recovered) { this.recovered = recovered; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Integer getActive() { return active; }</b>
+<b class="nc">&nbsp;    public void setActive(Integer active) { this.active = active; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Integer getNewCases() { return newCases; }</b>
+<b class="nc">&nbsp;    public void setNewCases(Integer newCases) { this.newCases = newCases; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Integer getNewDeaths() { return newDeaths; }</b>
+<b class="nc">&nbsp;    public void setNewDeaths(Integer newDeaths) { this.newDeaths = newDeaths; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Integer getNewRecovered() { return newRecovered; }</b>
+<b class="nc">&nbsp;    public void setNewRecovered(Integer newRecovered) { this.newRecovered = newRecovered; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Double getDeathsPer100Cases() { return deathsPer100Cases; }</b>
+<b class="nc">&nbsp;    public void setDeathsPer100Cases(Double deathsPer100Cases) { this.deathsPer100Cases = deathsPer100Cases; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Double getRecoveredPer100Cases() { return recoveredPer100Cases; }</b>
+<b class="nc">&nbsp;    public void setRecoveredPer100Cases(Double recoveredPer100Cases) { this.recoveredPer100Cases = recoveredPer100Cases; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Double getDeathsPer100Recovered() { return deathsPer100Recovered; }</b>
+<b class="nc">&nbsp;    public void setDeathsPer100Recovered(Double deathsPer100Recovered) { this.deathsPer100Recovered = deathsPer100Recovered; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Integer getNumberOfCountries() { return numberOfCountries; }</b>
+<b class="nc">&nbsp;    public void setNumberOfCountries(Integer numberOfCountries) { this.numberOfCountries = numberOfCountries; }</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-09 16:04</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,229 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > WorldometerData</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">covidapp.covid.entity</a>
+</div>
+
+<h1>Coverage Summary for Class: WorldometerData (covidapp.covid.entity)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">WorldometerData</td>
+<td class="coverageStat">
+  <span class="percent">
+    2.9%
+  </span>
+  <span class="absValue">
+    (1/35)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    2.9%
+  </span>
+  <span class="absValue">
+    (1/35)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">WorldometerData$HibernateInstantiator</td>
+  </tr>
+  <tr>
+    <td class="name">WorldometerData$HibernateProxy</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    2.9%
+  </span>
+  <span class="absValue">
+    (1/35)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    2.9%
+  </span>
+  <span class="absValue">
+    (1/35)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package covidapp.covid.entity;
+&nbsp;
+&nbsp;import jakarta.persistence.*;
+&nbsp;
+&nbsp;@Entity
+&nbsp;@Table(name = &quot;worldometer&quot;)
+<b class="fc">&nbsp;public class WorldometerData {</b>
+&nbsp;
+&nbsp;    @Id
+&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
+&nbsp;    private Long id;
+&nbsp;
+&nbsp;    @Column(name = &quot;`Country/Region`&quot;)
+&nbsp;    private String countryRegion;
+&nbsp;
+&nbsp;    @Column(name = &quot;Continent&quot;)
+&nbsp;    private String continent;
+&nbsp;
+&nbsp;    @Column(name = &quot;Population&quot;)
+&nbsp;    private Long population;
+&nbsp;
+&nbsp;    @Column(name = &quot;TotalCases&quot;)
+&nbsp;    private Long totalCases;
+&nbsp;
+&nbsp;    @Column(name = &quot;NewCases&quot;)
+&nbsp;    private Long newCases;
+&nbsp;
+&nbsp;    @Column(name = &quot;TotalDeaths&quot;)
+&nbsp;    private Long totalDeaths;
+&nbsp;
+&nbsp;    @Column(name = &quot;NewDeaths&quot;)
+&nbsp;    private Long newDeaths;
+&nbsp;
+&nbsp;    @Column(name = &quot;TotalRecovered&quot;)
+&nbsp;    private Long totalRecovered;
+&nbsp;
+&nbsp;    @Column(name = &quot;NewRecovered&quot;)
+&nbsp;    private Long newRecovered;
+&nbsp;
+&nbsp;    @Column(name = &quot;ActiveCases&quot;)
+&nbsp;    private Long activeCases;
+&nbsp;
+&nbsp;    @Column(name = &quot;`Serious,Critical`&quot;)
+&nbsp;    private Long seriousCritical;
+&nbsp;
+&nbsp;    @Column(name = &quot;`Tot Cases/1M pop`&quot;)
+&nbsp;    private Long totalCases1M;
+&nbsp;
+&nbsp;    @Column(name = &quot;`Deaths/1M pop`&quot;)
+&nbsp;    private Long deaths1M;
+&nbsp;
+&nbsp;    @Column(name = &quot;TotalTests&quot;)
+&nbsp;    private Long totalTests;
+&nbsp;
+&nbsp;    @Column(name = &quot;`Tests/1M pop`&quot;)
+&nbsp;    private Long tests1M;
+&nbsp;
+&nbsp;    @Column(name = &quot;`WHO Region`&quot;)
+&nbsp;    private String whoRegion;
+&nbsp;
+&nbsp;    // Getters &amp; Setters
+<b class="nc">&nbsp;    public Long getId() { return id; }</b>
+<b class="nc">&nbsp;    public void setId(Long id) { this.id = id; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public String getCountryRegion() { return countryRegion; }</b>
+<b class="nc">&nbsp;    public void setCountryRegion(String countryRegion) { this.countryRegion = countryRegion; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public String getContinent() { return continent; }</b>
+<b class="nc">&nbsp;    public void setContinent(String continent) { this.continent = continent; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getPopulation() { return population; }</b>
+<b class="nc">&nbsp;    public void setPopulation(Long population) { this.population = population; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getTotalCases() { return totalCases; }</b>
+<b class="nc">&nbsp;    public void setTotalCases(Long totalCases) { this.totalCases = totalCases; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getNewCases() { return newCases; }</b>
+<b class="nc">&nbsp;    public void setNewCases(Long newCases) { this.newCases = newCases; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getTotalDeaths() { return totalDeaths; }</b>
+<b class="nc">&nbsp;    public void setTotalDeaths(Long totalDeaths) { this.totalDeaths = totalDeaths; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getNewDeaths() { return newDeaths; }</b>
+<b class="nc">&nbsp;    public void setNewDeaths(Long newDeaths) { this.newDeaths = newDeaths; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getTotalRecovered() { return totalRecovered; }</b>
+<b class="nc">&nbsp;    public void setTotalRecovered(Long totalRecovered) { this.totalRecovered = totalRecovered; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getNewRecovered() { return newRecovered; }</b>
+<b class="nc">&nbsp;    public void setNewRecovered(Long newRecovered) { this.newRecovered = newRecovered; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getActiveCases() { return activeCases; }</b>
+<b class="nc">&nbsp;    public void setActiveCases(Long activeCases) { this.activeCases = activeCases; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getSeriousCritical() { return seriousCritical; }</b>
+<b class="nc">&nbsp;    public void setSeriousCritical(Long seriousCritical) { this.seriousCritical = seriousCritical; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getTotalCases1M() { return totalCases1M; }</b>
+<b class="nc">&nbsp;    public void setTotalCases1M(Long totalCases1M) { this.totalCases1M = totalCases1M; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getDeaths1M() { return deaths1M; }</b>
+<b class="nc">&nbsp;    public void setDeaths1M(Long deaths1M) { this.deaths1M = deaths1M; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getTotalTests() { return totalTests; }</b>
+<b class="nc">&nbsp;    public void setTotalTests(Long totalTests) { this.totalTests = totalTests; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public Long getTests1M() { return tests1M; }</b>
+<b class="nc">&nbsp;    public void setTests1M(Long tests1M) { this.tests1M = tests1M; }</b>
+&nbsp;
+<b class="nc">&nbsp;    public String getWhoRegion() { return whoRegion; }</b>
+<b class="nc">&nbsp;    public void setWhoRegion(String whoRegion) { this.whoRegion = whoRegion; }</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-09 16:04</div>
+</div>
+</body>
+</html>

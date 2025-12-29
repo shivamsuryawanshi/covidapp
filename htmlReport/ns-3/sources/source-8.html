@@ -1,0 +1,118 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > FullGrouped</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">covidapp.covid.entity</a>
+</div>
+
+<h1>Coverage Summary for Class: FullGrouped (covidapp.covid.entity)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">FullGrouped$HibernateInstantiator</td>
+  </tr>
+  <tr>
+    <td class="name">FullGrouped$HibernateProxy</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package covidapp.covid.entity;
+&nbsp;
+&nbsp;import jakarta.persistence.*;
+&nbsp;import java.time.LocalDate;
+&nbsp;import lombok.Data;
+&nbsp;
+&nbsp;@Entity
+&nbsp;@Data
+&nbsp;@IdClass(FullGroupedId.class)
+&nbsp;@Table(name = &quot;full_grouped&quot;)
+&nbsp;public class FullGrouped {
+&nbsp;
+&nbsp;    @Id
+&nbsp;    @Column(name = &quot;Date&quot;)
+&nbsp;    private LocalDate date;
+&nbsp;
+&nbsp;    @Id
+&nbsp;    @Column(name = &quot;Country/Region&quot;)
+&nbsp;    private String countryRegion;
+&nbsp;
+&nbsp;    @Column(name = &quot;Confirmed&quot;)
+&nbsp;    private Integer confirmed;
+&nbsp;
+&nbsp;    @Column(name = &quot;Deaths&quot;)
+&nbsp;    private Integer deaths;
+&nbsp;
+&nbsp;    @Column(name = &quot;Recovered&quot;)
+&nbsp;    private Integer recovered;
+&nbsp;
+&nbsp;    @Column(name = &quot;Active&quot;)
+&nbsp;    private Integer active;
+&nbsp;
+&nbsp;    @Column(name = &quot;New cases&quot;)
+&nbsp;    private Integer newCases;
+&nbsp;
+&nbsp;    @Column(name = &quot;New deaths&quot;)
+&nbsp;    private Integer newDeaths;
+&nbsp;
+&nbsp;    @Column(name = &quot;New recovered&quot;)
+&nbsp;    private Integer newRecovered;
+&nbsp;
+&nbsp;    @Column(name = &quot;WHO Region&quot;)
+&nbsp;    private String whoRegion;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-09 16:04</div>
+</div>
+</body>
+</html>

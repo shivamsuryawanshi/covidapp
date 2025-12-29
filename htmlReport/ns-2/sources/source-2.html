@@ -1,0 +1,182 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > CountryWiseController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">covidapp.covid.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: CountryWiseController (covidapp.covid.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CountryWiseController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    20%
+  </span>
+  <span class="absValue">
+    (1/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    20%
+  </span>
+  <span class="absValue">
+    (2/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package covidapp.covid.controller;
+&nbsp;   
+&nbsp;import covidapp.covid.entity.CountryWiseLatest;
+&nbsp;import covidapp.covid.service.CountryWiseService;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.http.ResponseEntity;
+&nbsp;import org.springframework.web.bind.annotation.PathVariable;
+&nbsp;import org.springframework.web.bind.annotation.PutMapping;
+&nbsp;import org.springframework.web.bind.annotation.RequestBody;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.http.ResponseEntity;
+&nbsp;import org.springframework.web.bind.annotation.PathVariable;
+&nbsp;import org.springframework.web.bind.annotation.PutMapping;
+&nbsp;import org.springframework.web.bind.annotation.RequestBody;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/api/country&quot;)
+&nbsp;@CrossOrigin(&quot;*&quot;)
+&nbsp;public class CountryWiseController {
+&nbsp;
+&nbsp;    private final CountryWiseService service;
+&nbsp;
+<b class="fc">&nbsp;    public CountryWiseController(CountryWiseService service) {</b>
+&nbsp;
+<b class="fc">&nbsp;        this.service = service;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/all&quot;)
+&nbsp;    public List&lt;CountryWiseLatest&gt; getAll() {
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        return service.getAll();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/{country}&quot;)
+&nbsp;    public CountryWiseLatest getByCountry(@PathVariable String country) {
+&nbsp;
+<b class="nc">&nbsp;        return service.getByCountry(country);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PostMapping(&quot;/add&quot;)
+&nbsp;    public CountryWiseLatest addNewCountry(@RequestBody CountryWiseLatest data) {
+<b class="nc">&nbsp;        return service.saveCountry(data);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // UPDATE COUNTRY DATA
+&nbsp;    @PutMapping(&quot;/{country}&quot;)
+&nbsp;    public ResponseEntity&lt;?&gt; updateCountry(
+&nbsp;            @PathVariable String country,
+&nbsp;            @RequestBody CountryWiseLatest updatedData
+&nbsp;    ) {
+<b class="nc">&nbsp;        CountryWiseLatest updated = service.updateCountry(country, updatedData);</b>
+&nbsp;
+<b class="nc">&nbsp;        if (updated == null) {</b>
+<b class="nc">&nbsp;            return ResponseEntity.status(HttpStatus.NOT_FOUND)</b>
+<b class="nc">&nbsp;                    .body(&quot;Country not found&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        return ResponseEntity.ok(updated);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-12-09 16:04</div>
+</div>
+</body>
+</html>
